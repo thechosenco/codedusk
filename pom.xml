@@ -36,7 +36,7 @@
     <dependency>
 	    <groupId>com.github.smups</groupId>
 	    <artifactId>codenightly</artifactId>
-	    <version>main-SNAPSHOT</version>
+	    <version>main-0a908f94d0-1</version>
     </dependency>
   </dependencies>
 
