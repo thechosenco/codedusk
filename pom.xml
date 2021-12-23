@@ -7,6 +7,7 @@
   <groupId>com.smups</groupId>
   <artifactId>codedusk</artifactId>
   <version>1.0</version>
+  <packaging>jar</packaging>
 
   <name>codedusk</name>
   <!-- FIXME change it to the project's website -->
@@ -42,27 +43,21 @@
   <build>
     <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
     <plugins>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.2</version>
-        <configuration> <!-- Compile java 7 compatible bytecode -->
-          <source>1.7</source>
-          <target>1.7</target>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+            <archive>
+                <manifest>
+                    <addClasspath>true</addClasspath>
+                    <classpathPrefix>codedusk/</classpathPrefix>
+                    <mainClass>
+                        com.smups.App
+                    </mainClass>
+                </manifest>
+            </archive>
         </configuration>
-      </plugin>
-
-      <plugin>  <!-- Create sources.jar -->
-        <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-                <execution>
-                    <id>attach-sources</id>
-                    <goals>
-                        <goal>jar</goal>
-                    </goals>
-                </execution>
-            </executions>
       </plugin>
             
       <plugin>
